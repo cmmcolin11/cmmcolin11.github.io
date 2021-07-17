@@ -2,33 +2,35 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Plyr</title>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
 
+            video {
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                -webkit-object-fit: cover;
+                -moz-object-fit: cover;
+                -ms-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+    </style>
+    <script>
+    </script>
 </head>
 
 <body>
-    <video id="player"></video>
-
-    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
-    <script type="text/javascript">
-        const player = new Plyr('#player');
-        player.source = {
-            type: 'video',
-            sources: [
-                {
-                    src: '/mp4/test.mp4',
-                    type: 'video/mp4',
-                },
-            ],
-            poster: '/path/to/poster.jpg',
-        };
-        player.play(); // Start playback
-        player.fullscreen.enter(); // Enter fullscreen
-
-    </script>
+    <video id="player" autoplay playsinline controls data-poster="/path/to/poster.jpg">
+        <source src="/mp4/test.mp4" type="video/mp4" />
+    </video>
 </body>
-
 
 </html>
