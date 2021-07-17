@@ -8,7 +8,6 @@
         body {
             margin: 0;
             padding: 0;
-            background-size: cover;
         }
     </style>
 </head>
@@ -18,7 +17,7 @@
         const player = new Plyr('#player');
         player.play();
     </script>
-    <video id="player" autoplay playsinline controls data-poster="/path/to/poster.jpg">
+    <video id="player" autoplay data-poster="/path/to/poster.jpg">
         <source src="/mp4/test.mp4" type="video/mp4" />
     </video>
 </body>
