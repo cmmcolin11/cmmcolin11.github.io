@@ -1,50 +1,24 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css" />
-    <style>
-        body {
-            max-width: 900px;
-        }
-    </style>
-    <script>
-        const options = {
-            fullscreen: {
-                enabled: true,
-                iosNative: false
-            },
-            controls: [
-                "play-large",
-                "play",
-                "progress",
-                "duration",
-                "mute",
-                "volume",
-                "fullscreen"
-            ],
-            muted: true,
-            storage: { enabled: false }
-        };
+    <meta charset="utf-8">
+    <title>Plyr</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
 
-        const optionsIOS = {
-            ...options,
-            fullscreen: {
-                enabled: true,
-                iosNative: true
-            }
-        };
-        const playerIOS = new Plyr(document.querySelector(".player-ios"), optionsIOS);
-
-    </script>
 </head>
 
 <body>
-    <div class="player-ios">
-        <iframe
-            src="https://player.vimeo.com/video/76979871?autoplay=1&muted=1&loop=false&byline=false&portrait=false&title=false&speed=true&transparent=0&gesture=media"
-            allowautoplay allowfullscreen allow="autoplay; fullscreen"></iframe>
-    </div>
+    <video id="player" playsinline controls autoplay fullscreen loop data-poster="/path/to/poster.jpg">
+        <source src="/mp4/test.mp4" type="video/mp4" />
+    </video>
 
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <script type="text/javascript">
+        const player = new Plyr('#player');
+        //screen.orientation.lock('landscape');
+    </script>
 </body>
+
 
 </html>
